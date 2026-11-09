@@ -37,6 +37,24 @@ public static class PinStore
         Save();
     }
 
+    // Moves a pinned tag to the given position in the pin order. In-memory only; call Commit() to persist
+    // (drag reordering moves many times and saves once on drop).
+    public static void MoveTo(Tag tag, int newIndex)
+    {
+        var key = tag.ToString();
+        if (!Pins.Remove(key))
+        {
+            return;
+        }
+
+        Pins.Insert(Mathf.Clamp(newIndex, 0, Pins.Count), key);
+    }
+
+    public static void Commit()
+    {
+        Save();
+    }
+
     private static List<string> Load()
     {
         try

@@ -35,7 +35,8 @@ public sealed class PinToggleOverlay : MonoBehaviour, IPointerEnterHandler, IPoi
         // Attach to the material icon image (index 1, the one MaterialSelector draws the material sprite on) so the
         // pin sits inside the icon rectangle's bottom-right corner rather than the toggle's.
         var images = GetComponentsInChildren<Image>(true);
-        var host = images.Length > 1 ? images[1].transform : transform;
+        IconImage = images.Length > 1 ? images[1] : null;
+        var host = IconImage != null ? IconImage.transform : transform;
 
         var go = new GameObject("PinButton", typeof(RectTransform));
         go.transform.SetParent(host, false);
@@ -52,6 +53,8 @@ public sealed class PinToggleOverlay : MonoBehaviour, IPointerEnterHandler, IPoi
         var button = go.AddComponent<Button>();
         button.transition = Selectable.Transition.None;
         button.onClick.AddListener(OnPinClicked);
+
+        go.AddComponent<PinDragHandle>().Init(this);
 
         toolTip = go.AddComponent<ToolTip>();
         Refresh();
@@ -102,8 +105,34 @@ public sealed class PinToggleOverlay : MonoBehaviour, IPointerEnterHandler, IPoi
     private void OnPinClicked()
     {
         PinStore.Toggle(materialTag);
+        RefreshAll();
+    }
 
-        // Re-sort every visible selector (a building can have several material slots) and update the icons.
+    public Tag MaterialTag => materialTag;
+
+    // The material icon image of this toggle (the one the game draws the material sprite on).
+    public Image IconImage { get; private set; }
+
+    // Dims the whole toggle while its pin is dragged, so the live insertion slot is easy to see.
+    public void SetDragging(bool dragging)
+    {
+        var group = GetComponent<CanvasGroup>();
+        if (group == null)
+        {
+            if (!dragging)
+            {
+                return;
+            }
+
+            group = gameObject.AddComponent<CanvasGroup>();
+        }
+
+        group.alpha = dragging ? 0.35f : 1f;
+    }
+
+    // Re-sorts every visible selector (a building can have several material slots) and updates all pin icons.
+    public static void RefreshAll()
+    {
         foreach (var selector in FindObjectsByType<MaterialSelector>(FindObjectsSortMode.None))
         {
             if (!selector.isActiveAndEnabled || selector.ElementToggles.Count == 0)
