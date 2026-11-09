@@ -1,0 +1,33 @@
+[h1]Pinned Materials[/h1]
+
+Lets you [b]pin[/b] materials in the build menu's material list, so the ones you use most are always shown first.
+
+Pick a building, and the materials you pinned sit at the top of the list, ready to click. No more scrolling through the list for the same material every time.
+
+[h2]How to use[/h2]
+[list]
+[*] Hover a material in the material list and click the small [b]pin icon[/b] at the bottom-right of its icon to pin it.
+[*] Click the pin of a pinned material to unpin it.
+[*] [b]Drag[/b] a pinned material's pin onto another pinned material to change the order. A copy of the icon follows the cursor, and the dragged material is dimmed to show where it will land.
+[/list]
+
+[h2]Features[/h2]
+[list]
+[*] Pinned materials are listed first, in the order you pinned them; everything else keeps the normal order
+[*] Pins are per [b]material[/b], so they apply to every building and every material slot
+[*] Pins are saved on your PC, not in the save file, and carry over to every colony
+[*] Materials you have not discovered yet stay hidden, as in the base game
+[*] Pinned materials that are out of stock are still listed (greyed out)
+[*] The initial selection is unchanged: the game still restores your last choice
+[*] English and Japanese
+[/list]
+
+[h2]Notes[/h2]
+[list]
+[*] Safe to add to or remove from existing saves.
+[*] Pinned materials are stored in [i]mods/config/PinnedMaterials.json[/i] in the game's user data folder. Delete the file to clear all pins.
+[*] The pin icons can be replaced by editing [i]ModAssets/pinned.png[/i] and [i]ModAssets/unpinned.png[/i] in the mod folder.
+[/list]
+
+[h2]Source[/h2]
+[url=https://github.com/dha-lo-jd/oni-mod-PinnedMaterials]GitHub[/url] (MIT License)
