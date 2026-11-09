@@ -27,6 +27,9 @@
         <Reference Include="System.Core">
             <HintPath>$(GameManagedPath)\System.Core.dll</HintPath>
         </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>$(GameManagedPath)\Newtonsoft.Json.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine">
             <HintPath>$(GameManagedPath)\UnityEngine.dll</HintPath>
         </Reference>
