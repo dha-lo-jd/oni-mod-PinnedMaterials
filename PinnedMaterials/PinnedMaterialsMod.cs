@@ -7,7 +7,7 @@ namespace PinnedMaterials;
 
 public sealed class PinnedMaterialsMod : UserMod2
 {
-    private static string modPath;
+    internal static string modPath;
 
     public override void OnLoad(Harmony harmony)
     {
