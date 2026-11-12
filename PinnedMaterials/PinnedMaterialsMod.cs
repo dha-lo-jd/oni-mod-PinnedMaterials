@@ -13,7 +13,6 @@ public sealed class PinnedMaterialsMod : UserMod2
     {
         base.OnLoad(harmony);
         modPath = path;
-        harmony.PatchAll(typeof(PinnedMaterialsMod).Assembly);
     }
 
     // Registers the strings and overloads them with translations/<language code>.po of the selected language.
