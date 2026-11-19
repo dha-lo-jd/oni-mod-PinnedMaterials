@@ -29,10 +29,5 @@
 [*] mod フォルダ内の [i]ModAssets/pinned.png[/i] と [i]ModAssets/unpinned.png[/i] を差し替えると、ピンアイコンを変更できます。
 [/list]
 
-[h2]更新履歴[/h2]
-[list]
-[*] 1.0.2: U60 正式版での対応を確認しました（挙動の変更はありません）。
-[/list]
-
 [h2]ソース[/h2]
 [url=https://github.com/dha-lo-jd/oni-mod-PinnedMaterials]GitHub[/url]（MIT ライセンス）

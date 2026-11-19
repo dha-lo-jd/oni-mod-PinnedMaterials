@@ -1,0 +1,9 @@
+[b]1.1.0[/b]
+[list]
+[*] Updated for the U60 release. Requires game version U60 or later (build 763796+).
+[/list]
+
+[b]1.1.0（日本語）[/b]
+[list]
+[*] U60 に対応しました。ゲームの U60 以降が必要です（ビルド 763796 以降）。
+[/list]

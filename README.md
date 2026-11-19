@@ -42,7 +42,7 @@ Tooltips are translated through `translations/<language code>.po` (English and J
 
 ## Compatibility
 
-- ONI build: **744825 or later**
+- ONI build: **763796 or later** (requires U60 or later)
 - Required DLC: none
 - Patches `MaterialSelector.ElementSorter` (Harmony postfix) and `MaterialSelector.ConfigureScreen`.
 
