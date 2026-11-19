@@ -22,6 +22,11 @@ Pick a building, and the materials you pinned sit at the top of the list, ready 
 [*] English and Japanese
 [/list]
 
+[h2]Changelog[/h2]
+[list]
+[*] 1.0.2: Confirmed compatible with the U60 release (no behaviour change).
+[/list]
+
 [h2]Notes[/h2]
 [list]
 [*] Safe to add to or remove from existing saves.
