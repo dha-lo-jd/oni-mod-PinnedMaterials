@@ -62,6 +62,14 @@
         </Reference>
     </ItemGroup>
 
+    <!-- In-game tests (Debug only) use Check/Wait from Gravitas.TestHarness. -->
+    <ItemGroup Condition="'$(Configuration)' == 'Debug' and '$(HarnessDllPath)' != ''">
+        <Reference Include="Gravitas.TestHarness">
+            <HintPath>$(HarnessDllPath)</HintPath>
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+
     <ItemGroup>
         <None Update="mod_info.yaml">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

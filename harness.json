@@ -1,0 +1,5 @@
+{
+  "build": ["dotnet build PinnedMaterials.sln -v q -p:ModInstallPath=F:/_System/Documents/Klei/OxygenNotIncluded/mods/local/PinnedMaterials"],
+  "required_mods": ["PinnedMaterials.Local"],
+  "save": "05 all research.sav"
+}
